@@ -2,6 +2,8 @@ package it.polito.tdp.esempioGit;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.concurrent.TimeUnit;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -16,10 +18,10 @@ public class FXMLController implements Initializable {
     private void handleButtonAction(ActionEvent event) {
     	for(int i = 30; i > 0; i--) {
     		try {
-				Thread.sleep(1000);
+				TimeUnit.SECONDS.sleep(1);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
-			}
+			}	
     		String st = String.valueOf(i);
     		label.setText(st);
     	}
