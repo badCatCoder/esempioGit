@@ -11,18 +11,17 @@ public class FXMLController implements Initializable {
     
     @FXML
     private Label label;
-	private int mTempo;
-    
+
     @FXML
     private void handleButtonAction(ActionEvent event) {
-    	for(int i = this.mTempo; i > 0; i--) {
+    	for(int i = 30; i > 0; i--) {
     		try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-    		label.setText(""+i);
+    		String st = String.valueOf(i);
+    		label.setText(st);
     	}
         
         label.setText("Hello World!");
@@ -31,6 +30,5 @@ public class FXMLController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    	this.mTempo = 30;
     }    
 }
