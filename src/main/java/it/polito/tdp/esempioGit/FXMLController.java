@@ -16,20 +16,24 @@ public class FXMLController implements Initializable {
 
     @FXML
     private void handleButtonAction(ActionEvent event) {
-    	for(int i = 30; i > 0; i--) {
-    		try {
-				TimeUnit.SECONDS.sleep(1);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}	
-    		String st = String.valueOf(i);
-    		label.setText(st);
-    	}
-        
+    	for(int i = 30; i > 0; i--)
+    		this.time(i);
         label.setText("Hello World!");
     }
     
-    @Override
+    private void time(int i) {
+    	String st = String.valueOf(i);
+		
+    	try {
+			TimeUnit.SECONDS.sleep(1);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		label.setText(st);
+		
+	}
+
+	@Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
